@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Towers of Hanoi</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+        style="background: linear-gradient(to right, #6A0DAD, #4169E1);">
+        <div class="container">
+            <a class="navbar-brand" href="/">Towers of Hanoi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">What is it?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#play">How to Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#history">History</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron jumbotron-fluid text-center mt-5 custom-header">
+        <div class="container">
+            <h1 class="display-5">Welcome to Towers of Hanoi</h1>
+            <p class="lead">A classic puzzle game</p>
+        </div>
+    </header>
+
+    <section id="game" class="container">
+        <div class="score_container" style="color: #4B0082;">
+            <div>Moves</div>
+            <div id="score">0</div>
+        </div>
+        <div class="game_container" id="home">
+            <div class="game">
+                <div class="towers" id="home">
+                    <div data-draggable="target" id="tower1" class="tower"></div>
+                    <div data-draggable="target" id="tower2" class="tower"></div>
+                    <div data-draggable="target" id="tower3" class="tower"></div>
+                    <div id="level_select">
+                        <div class="level_text">
+                            <div class="won">Welcome to my version of Hanoi Towers !</div>
+                            <div class="thank you">Please select a level to start with:</div>
+                            <select class="select_option" id="selectlevel" onChange="runLevel()"
+                                name="selectlevel"></select>
+                        </div>
+                    </div>
+                    <div id="winner">
+                        <div class="winner_text">
+                            <div class="won">You Won !!!</div>
+                            <div class="thankyou">Thank you for playing</div>
+                            <div class="thankyou">&nbsp;</div>
+                            <button onclick="askLevel();">Another?</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="towers_poles">
+                    <div id="towerpole1" class="towerpole">
+                        <div class="pole"></div>
+                    </div>
+                    <div id="towerpole2" class="towerpole">
+                        <div class="pole"></div>
+                    </div>
+                    <div id="towerpole3" class="towerpole">
+                        <div class="pole"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="base_container">
+            <div class="base"></div>
+            <div id="about"></div>
+        </div>
+
+        <div class="container mt-5 text-center">
+            <button type="reset" class="btn btn-primary" onclick="reset()">Reset</button>
+        </div>
+
+
+
+        <div class="container mt-5">
+            <section class="mb-5">
+                <div class="row justify-content-center">
+                    <div class="mt-4 col-md-8 p-4 border rounded" style="border-color: purple !important;">
+                        <h2 class="text-center" style="color: #4B0082;">What is Towers of Hanoi?</h2>
+                        <p>
+                            The Towers of Hanoi is a classic mathematical puzzle that consists of
+                            three rods and a number of disks of different sizes which can slide onto
+                            any rod. The puzzle starts with the disks in a neat stack in ascending
+                            order of size on one rod, the smallest at the top, thus making a conical
+                            shape.
+                        </p>
+                        <p>
+                            It is said that the world will end when the puzzle is solved. Therefore, it's a race against
+                            time to see who can solve it first!
+                        </p>
+                    </div>
+                </div>
+                <div id="play"></div>
+            </section>
+
+            <section class="mb-5">
+                <div class="row justify-content-center">
+                    <div class="mt-4 col-md-8 p-4 border rounded" style="border-color: purple !important;">
+                        <h2 class="text-center" style="color: #4B0082;">How to Play</h2>
+                        <p>
+                            The objective of the puzzle is to move the entire stack to another rod,
+                            obeying the following simple rules:
+                        </p>
+                        <ol>
+                            <li>Only one disk can be moved at a time.</li>
+                            <li>
+                                Each move consists of taking the upper disk from one of the stacks and
+                                placing it on top of another stack.
+                            </li>
+                            <li>No disk may be placed on top of a smaller disk.</li>
+                        </ol>
+                        <p>
+                            It may sound easy, but don't be fooled. Many have attempted and failed!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="history" class="mb-5">
+                <div class="row justify-content-center">
+                    <div class="mt-4 col-md-8 p-4 border rounded" style="border-color: purple !important;">
+                        <h2 class="text-center" style="color: #4B0082;">History</h2>
+                        <p>
+                            The exact origin of the Towers of Hanoi puzzle is unknown. It is
+                            believed to have been invented by the French mathematician Édouard Lucas
+                            in the 19th century. However, there are also references to similar
+                            problems dating back to ancient India and China.
+                        </p>
+                        <p>
+                            Over the years, the puzzle has gained popularity as a brain teaser and has been featured in
+                            various forms of media.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <footer class="py-2 bg-dark text-white"
+        style="background-color: #6A0DAD !important ;padding-top: 0.625rem; padding-bottom: 0.625rem;" ;">
+        <div class="container-fluid text-center">
+            <p class="mb-0">© 2024 Towers of Hanoi</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    font-family: "ubuntu";
+}
+
+.custom-header {
+    background: linear-gradient(to right, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.1), #C9C6FF, #C9C6FF);
+    color: rgb(30, 26, 64);
+}
+
+.title_container {
+    width: 100%;
+    height: 6vh;
+}
+
+#title {
+    font-size: 40px;
+    text-align: center;
+}
+
+.score_container {
+    width: 100%;
+    color: rgb(64, 62, 62);
+    height: 600px;
+    font-size: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.game_container {
+    margin-top: -100px;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: bottom;
+}
+
+.towers {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    z-index: 2;
+}
+
+.towers_poles {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    z-index: 1;
+}
+
+.tower {
+    height: 60vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: bottom;
+}
+
+.towerpole {
+    height: 60vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: bottom;
+}
+
+.pole {
+    height: 100%;
+    width: 1.5vw;
+    z-index: 2;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background: linear-gradient(90deg, #333333 0%, #494747 30%, #495057 45%);
+}
+
+
+.disk {
+    height: 4vh;
+    background: linear-gradient(0deg, rgba(75, 0, 130, 1) 0%, rgba(148, 0, 211, 1) 100%);
+    position: relative;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    border-top: 1px solid gray;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diskmove:hover {
+    cursor: move;
+}
+
+.base_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.base {
+    background-color: #5c97e8;
+    height: 8vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#winner {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+.winner_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #5800E9;
+    text-align: center;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.won {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.select_option {
+    margin-top: 10px;
+}
+
+#level_select {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+}
+
+.level_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #4E4CB8, #007BFF);
+    text-align: center;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+}
