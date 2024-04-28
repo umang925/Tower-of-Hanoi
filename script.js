@@ -109,30 +109,25 @@ document.addEventListener('dragend', function (e) {
 }, false);
 
 function reset() {
-    // reset the whole game
-    // remove all disks from tower 1
     var tower1 = document.getElementById('tower1');
     while (tower1.hasChildNodes()) {
         tower1.removeChild(tower1.lastChild);
     }
-    // remove all disks from tower 2
+
     var tower2 = document.getElementById('tower2');
     while (tower2.hasChildNodes()) {
         tower2.removeChild(tower2.lastChild);
     }
-    // remove all disks from tower 3
+
     var tower3 = document.getElementById('tower3');
     while (tower3.hasChildNodes()) {
         tower3.removeChild(tower3.lastChild);
     }
-    // hide the 'winner' div
+
     var pos = document.getElementById('winner');
-    // pos.style.visibility = 'hidden';
     pos.style.display = 'none';
-    // show the 'select level' div
     var mylevel = document.getElementById('level_select');
     mylevel.style.display = 'block';
-    // empty the score
     var score = document.getElementById('score');
     score.innerHTML = 0;
 }
